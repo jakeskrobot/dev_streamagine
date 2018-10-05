@@ -7,6 +7,14 @@
 {% if user.is_authenticated %}
 <h1>Hi {{ user.username }}!</h1>
 {% endif %}
+  <div class="stream_name">
+    <form method="GET">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="text" name="stream_name" placeholder="mrskrobot">
+      <button type="submit">load</button>
+    </form>
+  </div>
   <script src="https://embed.twitch.tv/embed/v1.js"></script>
   <div id="twitch-embed"></div>
   <div class="twitch_all" style="align: center;">
