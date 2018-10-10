@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>This will be the "tinder"-like app to find cool streams.</h1>
+<ul>
+    {% for post in all_posts_list %}
+        <li>{{ post }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
