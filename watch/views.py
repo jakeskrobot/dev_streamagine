@@ -8,9 +8,9 @@ from accounts.models import *
 class WatchHomeView(ListView):
     model = CustomUser
     template_name = 'watch.html'
-    context_object_name = 'all_twich_username'
+    context_object_name = 'all_twitch_username'
 
 class WatchStreamView(DetailView):
     model = CustomUser
     template_name = 'watch_stream.html'
-    context_object_name = 'all_twich_username'
+    context_object_name = 'all_twitch_username'

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}My Account{% endblock title %}
+
+{% block body %}
+{% if user.is_authenticated %}
+    <h1>Hello, {{ user.username }}</h1>
+    <p>Your email : {{ user.email }}</p>
+    <p>Your twitch username : {{ user.twitch_username }}</p>
+    <a href="{% url 'accounts:edit_account' user.pk %}">Edit Account</a>
+    <a href="/accounts/password_change/">Change Password</a>
+{% endif %}
+{% endblock body %}

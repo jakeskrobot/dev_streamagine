@@ -16,8 +16,7 @@
   <p>Or pick from a current user's stream.</p>
   {% for tuser in all_twitch_username %}
             <div class="twitch_usernames">
-                <h2><a href="{% url 'watch:watch_stream' tuser.twitch_username %}">{{ tuser.twitch_username }}</a></h2>
-                <p>{{ post.body }}</p>
+                <h2><a href="{% url 'watch:watch_stream' tuser.pk %}">{{ tuser.twitch_username }}</a></h2>
             </div>
   {% endfor %}
 {% endblock body %}
