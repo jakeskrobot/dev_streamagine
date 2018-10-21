@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     #local
     'finder',
     'accounts',
+    'watch',
 
     #3rd party
     'crispy_forms',

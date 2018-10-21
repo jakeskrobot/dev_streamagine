@@ -4,19 +4,10 @@
 
 
 {% block body %}
-  <div class="stream_name">
-    <p>Go to a stream below</p>
-    <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="text" name="stream_name" placeholder="stream name">
-      <button type="submit">Load Stream</button>
-    </form>
-  </div><br>
-  <p>Or pick from a current user's stream.</p>
-  {% for tuser in all_twitch_username %}
-            <div class="twitch_usernames">
-                <h2><a href="{% url 'watch:watch_stream' tuser.pk %}">{{ tuser.twitch_username }}</a></h2>
-            </div>
-  {% endfor %}
+    <p>Add a stream</p>
+    <a href="{% url 'watch:add' %}"
+    <p>Or pick from a current user's stream in finder</p>
+    <a href="{% url 'finder:home' %}">Finder</a>
+    <p>Currently Listed Streams</p>
+
 {% endblock body %}

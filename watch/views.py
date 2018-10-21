@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-from accounts.models import *
+from .models import *
 
 class WatchHomeView(ListView):
     model = CustomUser
@@ -14,3 +14,8 @@ class WatchStreamView(DetailView):
     model = CustomUser
     template_name = 'watch_stream.html'
     context_object_name = 'all_twitch_username'
+
+class WatchAddView(CreateView):
+    model = Stream
+    template_name = 'finder_new.html'
+    fields = ['stream_name', 'author']
