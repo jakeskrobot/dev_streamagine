@@ -4,10 +4,18 @@
 
 {% block body %}
 {% if user.is_authenticated %}
-    <h1>Hello, {{ user.username }}</h1>
-    <p>Your email : {{ user.email }}</p>
-    <p>Your twitch username : {{ user.twitch_username }}</p>
-    <a href="{% url 'accounts:edit_account' user.pk %}">Edit Account</a>
-    <a href="/accounts/password_change/">Change Password</a>
+    <div class="jumbotron">
+            <h1 class="display-4">Hello, {{ user.username }}!</h1>
+            <p class="lead">
+                Your email : {{ user.email }}
+                <br/>
+                Your twitch username : {{ user.twitch_username }}
+                <br/>
+                <a href="{% url 'accounts:edit_account' user.pk %}">Edit Account</a> |
+                <a href="/accounts/password_change/">Change Password</a>
+            </p>
+        </div>
+        <div class="stream_name">
+      </div>
 {% endif %}
 {% endblock body %}

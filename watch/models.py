@@ -7,7 +7,7 @@ class Stream(models.Model):
     author = models.ForeignKey('accounts.CustomUser', on_delete=models.CASCADE,)
 
     def __str__(self):
-        return self.title
+        return self.stream_name
 
     def get_absolute_url(self):
-        return reverse('finder:finder_detail', args=[str(self.id)])
+        return reverse('watch:watch_stream', args=[str(self.id)])

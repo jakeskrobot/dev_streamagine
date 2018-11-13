@@ -5,11 +5,33 @@
 {% endblock %}
 
 {% block body %}
-    <h1>This will be the "tinder"-like app to find cool streams.</h1>
+    <div class="jumbotron">
+    <h1 class="display-4">Find some gamer friends!</h1>
+    <p class="lead">
+        Want to introduce yourself?<a href="{% url 'finder:finder_add' %}">Add</a> a post!
+    </p>
+    </div>
     {% for post in all_posts_list %}
-        <div class="post-entry">
-            <h2><a href="{% url 'finder:finder_detail' post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.body }}</p>
+        <div class="card">
+            <div class="card-header">
+                <span class="font-weight-bold">{{ post.title }}</span> &middot;
+                <span class="text-muted">by {{ post.author }} |
+                {{ post.date }}</span>
+            </div>
+            <div class="card-body">
+                <p>{{ post.body }}</p>
+                <a href="{% url 'finder:finder_edit' post.pk %}">Edit</a> |
+                <a href="{% url 'finder:finder_delete' post.pk %}">Delete</a>
+            </div>
+            <div class="card-footer">
+                {% for comment in post.comments.all %}
+                    <p>
+                        <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+                        {{ comment }}
+                    </p>
+                {% endfor %}
+            </div>
         </div>
+        <br/>
     {% endfor %}
 {% endblock body %}

@@ -6,6 +6,8 @@
         <p>{{ post.body }}</p>
     </div>
 
-    <p><a href="{% url 'finder:finder_edit' post.pk %}">+ Edit</a></p>
-    <p><a href="{% url 'finder:finder_delete' post.pk %}">+ Delete</a></p>
+    <a href="{% url 'finder:finder_edit' post.pk %}">Edit</a> |
+    <a href="{% url 'finder:finder_delete' post.pk %}">Delete</a>
+    <br/>
+    Back to finder <a href="{% url 'finder:home' %}">home.</a>
 {% endblock body %}

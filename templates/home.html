@@ -4,9 +4,14 @@
 
 
 {% block body %}
-<h1>Welcome to Streamagine, a place to get to know the twitch community!</h1>
-{% if user.is_authenticated %}
-<h2>Hi {{ user.username }}!</h2>
-{% endif %}
+
+    <div class="jumbotron">
+    <h1 class="display-4">Welcome to Streamagine!</h1>
+    <p class="lead">
+        {% if user.is_authenticated %}
+            Hi {{ user.username }}!
+        {% endif %}
+    </p>
+    </div>
 
 {% endblock body %}

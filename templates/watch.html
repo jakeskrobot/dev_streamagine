@@ -4,10 +4,27 @@
 
 
 {% block body %}
-    <p>Add a stream</p>
-    <a href="{% url 'watch:add' %}"
-    <p>Or pick from a current user's stream in finder</p>
-    <a href="{% url 'finder:home' %}">Finder</a>
-    <p>Currently Listed Streams</p>
+    <div class="jumbotron">
+        <h1 class="display-4">Check out our featured streamer!</h1>
+        <p class="lead">
+            This month's featured streamer is Harkshaw
+        </p>
+    </div>
+    <div class="stream_name">
+  </div>
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+  <div id="twitch-embed"></div>
+  <div class="twitch_all" style="align: center;">
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+      <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+      <script type="text/javascript">
+        new Twitch.Embed("twitch-embed", {
+          width: 854,
+          height: 480,
+          channel: "harkshaw"
+        });
+      </script>
+    </div>
 
 {% endblock body %}

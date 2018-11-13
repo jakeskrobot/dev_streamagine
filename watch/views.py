@@ -17,5 +17,5 @@ class WatchStreamView(DetailView):
 
 class WatchAddView(CreateView):
     model = Stream
-    template_name = 'finder_new.html'
+    template_name = 'watch_add.html'
     fields = ['stream_name', 'author']
